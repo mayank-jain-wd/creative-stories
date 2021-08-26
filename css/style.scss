@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat&display=swap");
+$white-c: #fff;
+$aqua-c: #61d4e7;
+$yellow-c: #f6d427;
+$pink-c: #ed92ae;
+$black-c: #111111;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3 {
+  font-family: "Caveat", cursive;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+p {
+  line-height: 26px;
+  font-size: 14px;
+}
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spacer {
+  height: 400px;
+  padding: 15em 0;
+}
+.col-6,
+.col-3,
+.col-4 {
+  flex: 1;
+}
+.portfolio-sec .prtf-sec .col-4 {
+  flex: 32%;
+}
+@mixin b4-ele($e-c) {
+  content: "";
+  display: inline-block;
+  width: 2.9em;
+  height: 2px;
+  background: $e-c;
+  position: relative;
+  top: -7px;
+}
+@mixin head($fs, $c) {
+  font-size: $fs;
+  color: $c;
+  font-weight: bolder;
+  line-height: 1em;
+}
+@mixin sub-head($c) {
+  font-size: 20px;
+  color: $c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+@mixin img-back-sec($back-img) {
+  background-image: url($back-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin view-btn($b-c) {
+  border: 3px solid $b-c;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $black-c;
+  text-decoration: none;
+  display: block;
+  margin-top: 30px;
+  width: 154px;
+  font-weight: bolder;
+}
+
+@mixin gallery($gall-img) {
+  background-image: url($gall-img);
+  background-size: cover;
+  background-position: center;
+}
+h2 {
+  @include head(4em, $black-c);
+  margin-bottom: 30px;
+}
+.header {
+  height: 95vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/header.jpg");
+  h1 {
+    @include head(8em, $white-c);
+    text-align: center;
+  }
+}
+.about-sec {
+  h4 {
+    @include sub-head($aqua-c);
+
+    &::before {
+      @include b4-ele($aqua-c);
+    }
+  }
+  .left-sec {
+    @include img-back-sec("../images/1.jpg");
+  }
+  .right-sec {
+    a {
+      @include view-btn($aqua-c);
+      &:hover {
+        border-color: #3295a6;
+      }
+    }
+  }
+}
+.feature-sec {
+  h4 {
+    @include sub-head($yellow-c);
+
+    &::before {
+      @include b4-ele($yellow-c);
+    }
+  }
+  .left-sec {
+    @include img-back-sec("../images/2.jpg");
+  }
+  .right-sec {
+    a {
+      @include view-btn($yellow-c);
+      &:hover {
+        border-color: #c3a617;
+      }
+    }
+  }
+}
+.digital-sec {
+  h4 {
+    @include sub-head($pink-c);
+
+    &::before {
+      @include b4-ele($pink-c);
+    }
+  }
+  .left-sec {
+    @include img-back-sec("../images/3.jpg");
+  }
+  .right-sec {
+    a {
+      @include view-btn($pink-c);
+      &:hover {
+        border-color: #cb7d95;
+      }
+    }
+  }
+}
+.gallery-sec {
+  .spacer {
+    height: 300px;
+    padding: 0;
+  }
+  .img-1 {
+    @include gallery("../images/gallery-1.jpg");
+  }
+  .img-2 {
+    @include gallery("../images/gallery-2.jpg");
+  }
+  .img-3 {
+    @include gallery("../images/gallery-3.jpg");
+  }
+  .img-4 {
+    @include gallery("../images/gallery-4.jpg");
+  }
+}
+.portfolio-sec {
+  padding: 5em 0;
+  h4 {
+    @include sub-head($yellow-c);
+    text-align: center;
+  }
+  h2 {
+    @include head(4em, $black-c);
+    text-align: center;
+  }
+  .spacer {
+    height: 340px;
+    padding: 0;
+  }
+  .prtf-sec {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 3em;
+  }
+  .prt-img-1 {
+    @include gallery("../images/port-1.jpg");
+  }
+  .prt-img-2 {
+    @include gallery("../images/port-2.jpg");
+  }
+  .prt-img-3 {
+    @include gallery("../images/port-3.jpg");
+  }
+  .prt-img-4 {
+    @include gallery("../images/port-4.jpg");
+  }
+  .prt-img-5 {
+    @include gallery("../images/port-5.jpg");
+  }
+  .prt-img-6 {
+    @include gallery("../images/port-6.jpg");
+  }
+}
+.service-sec {
+  h5 {
+    color: $white-c;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .container {
+    display: flex;
+    gap: 10px;
+  }
+  .service-1 {
+    background-color: $aqua-c;
+    padding: 4em 1em;
+  }
+  .service-2 {
+    background-color: $yellow-c;
+    padding: 4em 1em;
+  }
+  .service-3 {
+    background-color: $pink-c;
+    padding: 4em 1em;
+  }
+  .service-4 {
+    background-color: $aqua-c;
+    padding: 4em 1em;
+  }
+  img {
+    width: 3em;
+    height: 3em;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.8em;
+  }
+}
+.footer-sec {
+  background-color: #333;
+  text-align: center;
+  color: #fff;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    flex-direction: column;
+    align-items: normal;
+    flex-wrap: wrap;
+  }
+  .right-sec {
+    padding: 4em 0;
+  }
+  .spacer {
+    height: 300px;
+    padding: 10em 0;
+  }
+  .gallery-sec .col-3 {
+    flex: 50%;
+  }
+  .service-sec .col-4 {
+    flex-basis: 49%;
+  }
+  .gallery-sec,
+  .service-sec .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .portfolio-sec .prtf-sec .col-4 {
+    flex-basis: 49%;
+  }
+  .feature-sec .right-sec {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 7em;
+  }
+  html {
+    font-size: 75%;
+  }
+  .container {
+    width: 100%;
+  }
+  .about-sec .right-sec a {
+    width: 130px;
+  }
+}
